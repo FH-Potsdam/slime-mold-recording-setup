@@ -1,8 +1,9 @@
 slime mold recording setup
 ==========================
 
-A simple setup for constantly recording with the Raspberry Pi camera and some LEDs to light u pthe scene.  
+A simple setup for constantly recording with the Raspberry Pi camera and some LEDs to light up the scene.  
 
+![](images/input-output-slime-mold.png)  
 ##Prerequisites  
 
 We asume you know how to setup your Camera Module and how to use the Terminal on the Raspberry Pi. 
