@@ -26,14 +26,14 @@ Make sure you have all the libraries you need
 
 ##Usage  
 
-Open the file `/python/camera-controller.py` and change the path to where you would like to store your images. It is around the top of the script.
+Open the file `/python/camera-controller.py` and change the path to where you would like to store your images. It is around the top of the script. If the folder does not exist the script will create it.  
 
 ```python
     IMAGEFOLDER = "/home/pi/fhp/images/"
     IMAGENAME = "slime"
 ```
 
-_If you want to use more then 4 LEDs you will have to edit the function `setup`._  
+__If you want to use more then 4 LEDs you will have to edit the function `setup`.__  
 
 Run the script from the Terminal:  
 
