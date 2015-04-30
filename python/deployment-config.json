@@ -1,0 +1,9 @@
+{
+    "type": "sftp",
+    "host": "fabiantheblind.local",
+    "username": "pi",
+    "password": "raspberry",
+    "port": 22,
+    "remotePath": "/home/pi/fhp",
+    "uploadOnSave": true
+}
