@@ -37,8 +37,18 @@ except ImportError:
     print "$ sudo apt-get install python-picamera python3-picamera"
     sys.exit()
 
+def lighton(led1, led2, led3, led4):
+    GPIO.output(led1, GPIO.HIGH)
+    GPIO.output(led2, GPIO.HIGH)
+    GPIO.output(led3, GPIO.HIGH)
+    GPIO.output(led4, GPIO.HIGH)
 
 
+def lightoff(led1, led2, led3, led4):
+    GPIO.output(led1, GPIO.LOW)
+    GPIO.output(led2, GPIO.LOW)
+    GPIO.output(led3, GPIO.LOW)
+    GPIO.output(led4, GPIO.LOW)
 ##
 #Add more LEDs as arguments
 #
@@ -75,7 +85,11 @@ if __name__ == '__main__':
         # camera.start_preview()
         # time.sleep(5)
         filename = IMAGEFOLDER + IMAGENAME + TIMESTAMP + ".jpg"
+        lighton(21, 22, 23, 24)
+        time.sleep(0.2)
         cam.capture(filename)
+        time.sleep(0.2)
+        lightoff(21, 22, 23, 24)
         print "made a picture and wrote it to ", filename
         cam.close() # close the cam again
         # camera.stop_preview()
