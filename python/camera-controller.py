@@ -73,7 +73,7 @@ def setup(led1, led2, led3, led4):
 # now run all of that
 if __name__ == '__main__':
     try:
-        setup(21, 22, 23, 24)
+        setup(11, 12, 15, 16)
         print "GPIO all set up"
         cam = picamera.PiCamera()
         # this is just for testing
@@ -85,11 +85,11 @@ if __name__ == '__main__':
         # camera.start_preview()
         # time.sleep(5)
         filename = IMAGEFOLDER + IMAGENAME + TIMESTAMP + ".jpg"
-        lighton(21, 22, 23, 24)
+        lighton(11, 12, 15, 16)
         time.sleep(0.2)
         cam.capture(filename)
         time.sleep(0.2)
-        lightoff(21, 22, 23, 24)
+        lightoff(11, 12, 15, 16)
         print "made a picture and wrote it to ", filename
         cam.close() # close the cam again
         # camera.stop_preview()
