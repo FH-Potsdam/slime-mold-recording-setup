@@ -16,6 +16,8 @@ IMAGENAME = "slime"
 
 # leave this alone
 TIMESTAMP = 0
+
+
 # Check if the libraries exist on this system
 # if not throw a warning
 try:
@@ -92,6 +94,8 @@ if __name__ == '__main__':
         lightoff(11, 12, 15, 16)
         print "made a picture and wrote it to ", filename
         cam.close() # close the cam again
+        # now set the permissions on the file so user pi can edit it
+        os.chmod(filename, 0777)
         # camera.stop_preview()
         # GPIO.cleanup()
     except KeyboardInterrupt:
@@ -107,4 +111,3 @@ if __name__ == '__main__':
     finally:
         print "end. clean up GPIO"
         GPIO.cleanup() # this ensures a clean exit
-
