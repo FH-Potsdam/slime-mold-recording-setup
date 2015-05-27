@@ -76,6 +76,29 @@ Do the wiring like shown below.
 
 ![](fritzing/recording-setup-physical_bb.png)  
 
+------------
+
+## Controling A Webcam  
+
+If you want to use a standard USB webcam you can so that as well. Instead of using the picamera module you need to install `fswebcam`.  
+
+    sudo apt-get install fswebcam
+
+Test if everything went fine by just plugging in your cam and running:  
+
+    fswebcam test-cam.jpg  
+
+This should create a snapshot in your current folder. To have some finer settings use something like this:  
+
+    fswebcam -i 0 -d /dev/video0 --no-title --no-subtitle --no-info --no-banner -r 640x480 /home/pi/Desktop/fswebcam-test.jpg
+
+See the man pages of fswebcam for further info.  
+
+    man fswebcam  
+
+Execute the `web-cam-controller.py` from a crontab like discribed above.  
+
+
 -----------
 
 ## Controling Arduino Boards
