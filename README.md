@@ -76,9 +76,40 @@ Do the wiring like shown below.
 
 ![](fritzing/recording-setup-physical_bb.png)  
 
+-----------
+
+## Controling Arduino Boards
+
+If you need to controll other hardware it is often easier to use an Arduino Board. The documentation you can find online is much better. The Raspberry Pi is a great computer. The Arduino board has it's focus more on the hardware. 
+
+### Prerequisites & install
+The easiest way is to send signals over a serial connection. For that you can just hook up the Arduino to one of the USB ports of the Pi. You actually can programm your Arduino right from the Pi. Just run the following command in the Terminal to install the Arduino IDE.
+
+    sudo apt-get install arduino
+
+This will install the Arduino IDE and create a folder called "sketchbook" under `/home/pi/sketchbook/`. Every *.ino sketch you place there will be available within the IDE.  
+
+First install the needed libraries.
+
+    sudo apt-get update && sudo apt-get upgrade
+    sudo apt-get install python3-pip python-pip
+    sudo pip install pyserial
+
+### Usage
+Now upload the sketch `/arduino/blink_over_serial/blink_over_serial.ino` to the board. Afterwards run the script `/python/arduino-controller.py`. The LED attached to pin 13 on the Arduino will blink until you end the script.  
+
+### What happens?  
+
+The python script will send a 0 and 1 with 1 second pause over the usb serial port. The arduino board is listening on the serial port and toggles the LED accordingly.  
+
+### Possible issues:  
+
+If the Arduino does not react attach the arduino to the other USB port. Whatch the output of the script. You need the pySerial libriary installed like mentioned above.  
+
 ##Todos  
 
 - Make it possible to record images every 30 seconds or something else
+- more code commenting  
 
 ##License
 Copyright (c) 2015 Fabian "fabiantheblind" Moron Zirfas & FH-Potsdam  
