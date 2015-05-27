@@ -96,7 +96,7 @@ See the man pages of fswebcam for further info.
 
     man fswebcam  
 
-Execute the `web-cam-controller.py` from a crontab like discribed above.  
+Execute the `web-cam-controller.py` from a crontab like discribed in the ["Usage"](https://github.com/FH-Potsdam/slime-mold-recording-setup#usage) section.  
 
 
 -----------
